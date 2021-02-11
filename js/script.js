@@ -39,4 +39,4 @@ for(let link of links){
 }
 
 const clickedElement = this;
-activeArticle.classList.add('active');
+ activeArticle.classList.add('active');
