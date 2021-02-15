@@ -25,7 +25,7 @@ for(let activeArticle of activeArticles){
 
 /* get 'href' attribute from the clicked link */
 
-const clickedElement = document.getElementById('hrev=')
+const clickedElement = document.getElementById('hrev')
 const articleSelector = document.getElementById('href')
 console.log(articleSelector, href)
 
@@ -49,3 +49,34 @@ for(let link of links){
 const clickedElement = this; {
 if (activeArticle.classList.add('active'));
 }
+
+
+const optArticleSelector = '.post',
+  optTitleSelector = '.post-title',
+  optTitleListSelector = '.titles';
+
+function generateTitleLinks(){
+
+  /* remove contents of titleList */
+
+const titleList = document.querySelectorAll(optTitleListSelector);
+
+function clearMessages(){
+  document.getElementById('messages').innerHTML = titleList;
+}
+
+  /* for each article */
+
+    /* get the article id */
+
+    /* find the title element */
+
+    /* get the title from the title element */
+
+    /* create HTML of the link */
+
+    /* insert link into titleList */
+
+}
+
+generateTitleLinks();
