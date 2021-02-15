@@ -46,5 +46,6 @@ for(let link of links){
 
 }
 
-const clickedElement = this;
+const clickedElement = this; {
 if (activeArticle.classList.add('active'));
+}
