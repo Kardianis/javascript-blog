@@ -25,9 +25,9 @@ for(let activeArticle of activeArticles){
 
 /* get 'href' attribute from the clicked link */
 
-const clickedElement = document.getElementById('hrev')
+const clickedElement = document.getElementById('href')
 const articleSelector = document.getElementById('href')
-console.log(articleSelector, href)
+console.log(articleSelector)
 
   /* find the correct article using the selector (value of 'href' attribute) */
 
@@ -41,15 +41,7 @@ const links = document.querySelectorAll('.titles a');
 
 for(let link of links){
   link.addEventListener('click', titleClickHandler);
-  event.preventDefault();
-
-
-}
-
-const clickedElement = this; {
-if (activeArticle.classList.add('active'));
-}
-
+  }
 
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
@@ -67,9 +59,21 @@ function clearMessages(){
 
   /* for each article */
 
+  const articles 
+  optArticleSelector = articles
+  for(let article of articles) {
+    console.log(article)
+  }
+
     /* get the article id */
 
+    const article = document.getElementById(id)
+const articleSelector = document.getElementById(id)
+console.log(articleSelector)
+
     /* find the title element */
+
+    const articleTitle = article.querySelector(optTitleSelector).innerHTML;
 
     /* get the title from the title element */
 
