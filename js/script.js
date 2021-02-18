@@ -1,7 +1,7 @@
 'use strict';
 
 function titleClickHandler(event){
-  console.log('Link was clicked!');
+  console.log('Link was clicked!', event);
 
   /* remove class 'active' from all article links  */
   const activeLinks = document.querySelectorAll('.titles a.active');
@@ -12,15 +12,18 @@ for(let activeLink of activeLinks){
 
   /* add class 'active' to the clicked link */
 
+  const clickedElement = event.target;
+  clickedElement.classList.add('active');
    console.log('clickedElement:', clickedElement);
 
   /* remove class 'active' from all articles */
 
-const activeArticles = document.querySelectorAll('.articles a.active');
+const activeArticle = document.querySelector('.post.active');
 
-for(let activeArticle of activeArticles){
   activeArticle.classList.remove('active');
-}
+const clickedElementId = clickedElement.hash.replace('#','')
+console.log(clickedElementId)
+document.getElementById(clickedElementId).classList.add('active')
 }
 
 /* get 'href' attribute from the clicked link */
@@ -59,21 +62,17 @@ function clearMessages(){
 
   /* for each article */
 
-  const articles 
-  optArticleSelector = articles;
-  for(let article of articles) {
-    console.log(article);
-  }
+  const articles = document.querySelectorAll(optArticleSelector);
+  console.log(articles);
   
-  let html = '';
+    let html = '';
 
-  for(let article of articles){
+
     /* get the article id */
-
-    const article = document.getElementById(id);
-const articleSelector = document.getElementById(id);
-console.log(articleSelector);
-
+  for(let article of articles){
+    console.log(article);
+    let articleId = article.id;
+    
     /* find the title element */
 
     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
