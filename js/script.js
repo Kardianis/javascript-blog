@@ -60,16 +60,19 @@ function clearMessages(){
   /* for each article */
 
   const articles 
-  optArticleSelector = articles
+  optArticleSelector = articles;
   for(let article of articles) {
-    console.log(article)
+    console.log(article);
   }
+  
+  let html = '';
 
+  for(let article of articles){
     /* get the article id */
 
-    const article = document.getElementById(id)
-const articleSelector = document.getElementById(id)
-console.log(articleSelector)
+    const article = document.getElementById(id);
+const articleSelector = document.getElementById(id);
+console.log(articleSelector);
 
     /* find the title element */
 
@@ -77,10 +80,17 @@ console.log(articleSelector)
 
     /* get the title from the title element */
 
+    const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+    console.log;
+
     /* create HTML of the link */
 
-    /* insert link into titleList */
+   titleList.innerHTML = titleList.innerHTML + linkHTML;
 
+    /* insert link into titleList */
+    html = html + linkHTML;
+}
+ titleList.innerHTML = html;
 }
 
 generateTitleLinks();
