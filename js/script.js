@@ -79,7 +79,7 @@ function clearMessages(){
 
     /* get the title from the title element */
 
-    const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+    const linkHTML = '<li><a href="#' + articleId + '">' + articleTitle + '</a></li>';
     console.log;
 
     /* create HTML of the link */
