@@ -97,13 +97,22 @@ generateTitleLinks();
 
 function generateTags(){
   /* find all articles */
-  .split(' ')
-  console.log(split)
-  
+
+  const articles = document.querySelectorAll(optArticleTagsSelector);
 
   /* START LOOP: for every article: */
+  for(let article of articles){
+    console.log(article);
+  
+  const titleList = article.querySelectorAll(optArticleTagsSelector);
 
+  let html = '';
+  
+  const articleTags = document.getElementById('href')
+  }
     /* find tags wrapper */
+
+    
 
     /* make html variable with empty string */
 
