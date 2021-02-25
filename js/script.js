@@ -112,11 +112,9 @@ function generateTags(){
 
     let html = '';
     
-    const articleTags = document.getElementById('href');
+       /* get tags from data-tags attribute */
 
-    /* get tags from data-tags attribute */
-
-    
+     const articleTags = document.getElementById('tag');
 
     /* split tags into array */
      const articleTagsArray = articleTags.split('');    
