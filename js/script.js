@@ -124,12 +124,22 @@ for(let tag of articleTagsArray){
 
       /* generate HTML of the link */
 
+      const linkHTML = '<li><a href="#' + articleId + '">' + articleTitle + '</a></li>';
+
       /* add generated code to html variable */
-}
+
+      console.log;
+
+   titleList.innerHTML = titleList.innerHTML + linkHTML;
+    html = html + linkHTML;
+
+ 
+
     /* END LOOP: for each tag */
+}
 
     /* insert HTML of all the links into the tags wrapper */
-
+titleList.innerHTML = html;
   /* END LOOP: for every article: */
   }
 }
