@@ -49,23 +49,24 @@ for(let link of links){
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
-  optArticleTagsSelector = '.post-tags .list';
+  optArticleTagsSelector = '.post-tags .list',
+  optAuthorSelector = '.post-author';
  
 function clearMessages(){
   document.getElementById('messages').innerHTML = titleList;
 }
  
-function generateTitleLinks(){
+function generateTitleLinks(customSelector = ''){
  
   /* remove contents of titleList */
  
 const titleList = document.querySelectorAll(optTitleListSelector);
  
  
+
+/* for each article */
  
-  /* for each article */
- 
-  const articles = document.querySelectorAll(optArticleSelector);
+const articles = document.querySelectorAll(optArticleSelector + customSelector);
   console.log(articles);
   
     let html = '';
@@ -180,24 +181,74 @@ function tagClickHandler(event){
   /* END LOOP: for each active tag link */
     }
   /* find all tag links with "href" attribute equal to the "href" constant */
- 
+    
+    const Tag = link.querySelectorAll('#tag');
+
   /* START LOOP: for each found tag link */
- 
+    for(let Tag of Tags){
     /* add class active */
- 
+      
+    const activeTag = document.getElementById("#tag-").classList.add("active");
+
   /* END LOOP: for each found tag link */
- 
+    }
   /* execute function "generateTitleLinks" with article selector as argument */
+  
+  generateTitleLinks('[data-tags~="' + tag + '"]');
 }
  
 function addClickListenersToTags(){
   /* find all links to tags */
+
+  const link = document.querySelectorAll('#tag');
  
   /* START LOOP: for each link */
+
+  for(let link of links){
  
     /* add tagClickHandler as event listener for that link */
+
+    link.addEventListener('click', titleClickHandler);
  
   /* END LOOP: for each link */
 }
+}
  
 addClickListenersToTags();
+
+function generateAuthors(){
+  /* find all Authors */
+ 
+  const Author = document.querySelectorAll(optArticleSelector);
+   
+    /* find tags wrapper */
+ 
+    const AuthorList = document.querySelector(optAuthorSelector);
+ 
+    /* make html variable with empty string */
+ 
+    let html = '';
+    
+       /* get tags from data-tags attribute */
+ 
+      const articleAuthors = document.getElementById('data-author');
+ 
+      /* START LOOP: for each Author */
+      for(let Author of Authors){
+ 
+        /* generate HTML of the link */
+ 
+        const linkHTML = '<p> Author </p>';
+  
+        // titleList.innerHTML = titleList.innerHTML + linkHTML;
+        html = html + linkHTML;
+        /* END LOOP: for each tag */
+      }
+ 
+      /* insert HTML of all the links into the tags wrapper */
+      titleList.innerHTML = html;
+      /* END LOOP: for every article: */
+  
+}
+ 
+generateAuthors();
