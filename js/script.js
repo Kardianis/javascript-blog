@@ -132,7 +132,7 @@ function generateTags(){
  
         /* add generated code to html variable */
  
-        console.log;
+        console.log(linkHTML);
  
         // titleList.innerHTML = titleList.innerHTML + linkHTML;
         html = html + linkHTML;
@@ -151,11 +151,11 @@ generateTags();
 function tagClickHandler(event){
   /* prevent default action for this event */
 
-
+  event.preventDefault();
  
   /* make new constant named "clickedElement" and give it the value of "this" */
  
-    this = document.getElementById(clickedElement);
+   const clickedElement = this
 
   /* make a new constant "href" and read the attribute "href" of the clicked element */
 
@@ -163,18 +163,22 @@ function tagClickHandler(event){
  
   /* make a new constant "tag" and extract tag from the "href" constant */
 
-    const tag = href 
+    const tag = href.replace('#tag-', '');
  
   /* find all tag links with class active */
 
-  querySelectorAll('a.active[href^="#tag-"]')
+  const activeTag = document.querySelectorAll('a.active[href^="#tag-"]');
  
   /* START LOOP: for each active tag link */
- 
+
+    for(let activeTag of activeTags ) {
+
     /* remove class active */
  
+      const activeTag = document.getElementById("#tag-").classList.remove("active");
+
   /* END LOOP: for each active tag link */
- 
+    }
   /* find all tag links with "href" attribute equal to the "href" constant */
  
   /* START LOOP: for each found tag link */
