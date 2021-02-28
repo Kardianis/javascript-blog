@@ -219,11 +219,12 @@ addClickListenersToTags();
 function generateAuthors(){
   /* find all Authors */
  
-  const Author = document.querySelectorAll(optArticleSelector);
+  const author = document.querySelectorAll(optAuthorSelector),
+        authors = document.querySelectorAll(optAuthorSelector);
    
     /* find tags wrapper */
  
-    const AuthorList = document.querySelector(optAuthorSelector);
+    const authorList = document.querySelector(optAuthorSelector);
  
     /* make html variable with empty string */
  
@@ -234,21 +235,20 @@ function generateAuthors(){
       const articleAuthors = document.getElementById('data-author');
  
       /* START LOOP: for each Author */
-      for(let Author of Authors){
+      for(let author of authors){
  
         /* generate HTML of the link */
  
         const linkHTML = '<p> Author </p>';
   
-        // titleList.innerHTML = titleList.innerHTML + linkHTML;
-        html = html + linkHTML;
+
         /* END LOOP: for each tag */
       }
  
-      /* insert HTML of all the links into the tags wrapper */
-      titleList.innerHTML = html;
+
       /* END LOOP: for every article: */
   
 }
  
 generateAuthors();
+
