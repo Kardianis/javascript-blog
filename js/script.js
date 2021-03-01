@@ -341,7 +341,7 @@ function generateTags(){
 
     /* split tags into array */
 
-         const articleTagsArray = articleTags.split(' ');
+     const articleTagsArray = articleTags.str.split(' ');
    
     /* START LOOP: for each tag */
 
