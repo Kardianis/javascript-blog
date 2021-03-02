@@ -235,7 +235,7 @@ function addClickListenersToTags(){
  
     /* add tagClickHandler as event listener for that link */
 
-    link.addEventListener('click', titleClickHandler);
+    link.addEventListener('click', tagClickHandler);
  
   /* END LOOP: for each link */
 }
