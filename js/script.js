@@ -28,7 +28,7 @@ document.getElementById(clickedElementId).classList.add('active')
  
 /* get 'href' attribute from the clicked link */
  
-// const clickedElement = document.getElementById('href')
+const clickedElement = document.getElementById('href')
 const articleSelector = document.getElementById('href')
 console.log(articleSelector)
  
@@ -64,15 +64,12 @@ function generateTitleLinks(customSelector = ''){
  
 const titleList = document.querySelectorAll(optTitleListSelector);
  
- 
-
-/* for each article */
+ /* for each article */
  
 const articles = document.querySelectorAll(optArticleSelector + customSelector);
   console.log(articles);
   
     let html = '';
- 
  
     /* get the article id */
   for(let article of articles){
@@ -102,17 +99,17 @@ const articles = document.querySelectorAll(optArticleSelector + customSelector);
 generateTitleLinks();
  
 function generateTags(){
+  
   /* [NEW] create a new variable allTags with an empty object */
   let allTags = {};
 
   /* find all articles */
  
   const articles = document.querySelectorAll(optArticleSelector);
- 
+ console.log(article);
   /* START LOOP: for every article: */
   for(let article of articles){
-    console.log(article);
-  
+      
     /* find tags wrapper */
  
     const titleList = article.querySelector(optArticleTagsSelector);
@@ -128,17 +125,17 @@ function generateTags(){
     /* split tags into array */
     if (typeof articleTags === 'string') {
       const articleTagsArray = articleTags.split(' ');
- 
+      console.log(articleTagsArray)
       /* START LOOP: for each tag */
       for(let tag of articleTagsArray){
  
         /* generate HTML of the link */
  
         const linkHTML = '<li><a href="#tag-' + tag + '">' + tag + '</a></li>';
- 
+        console.log(linkHTML);
         /* add generated code to html variable */
  
-        console.log(linkHTML);
+        let html = linkHTML + tag;
  
            /* [NEW] check if this link is NOT already in allTags */
       if(!allTags.hasOwnProperty(tag)){
@@ -148,7 +145,6 @@ function generateTags(){
         allTags[tag]++;
       }
     
-
         titleList.innerHTML = titleList.innerHTML + linkHTML;
         html = html + linkHTML;
         /* END LOOP: for each tag */
@@ -295,11 +291,11 @@ function authorClickHandler(event){
  
   /* find all tag links with class active */
 
-    const activeAuthor = document.getElementById('author-name');
+    const activeAuthors = document.getElementById('author-name');
  
   /* START LOOP: for each active tag link */
 
-     for(let activeAuthor of activeAuthor ) {
+     for(let activeAuthor of activeAuthors ) {
     /* remove class active */
  
       const activeAuthor = document.getElementById("author-name").classList.remove("active");
